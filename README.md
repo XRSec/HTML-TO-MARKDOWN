@@ -1,5 +1,3 @@
-# HTML-TO-MARKDOWN
-
 ## Example
 
 ```go
@@ -19,6 +17,4 @@ htmltomd -u https://baidu.com -o 123.md
 
 ## Build
 
-```bash
-
-```
+[Github Action](.github/workflows/Go%20Build.yml#L35)
