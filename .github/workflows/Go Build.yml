@@ -34,8 +34,6 @@ jobs:
       -
         name: Build with xgo
         uses: crazy-max/ghaction-xgo@v1
-        env:
-          buildvcs: false
         with:
           xgo_version: latest
           go_version: ${{ matrix.go_version }}
@@ -43,9 +41,9 @@ jobs:
           prefix: htmltomd
           targets: linux/amd64, linux/arm64, darwin/amd64, darwin/arm64, windows/amd64, windows/arm64
           v: false
-          x: false
+          x: true
           race: false
-          ldflags: -s -w -X main.buildTime=${{ steps.time.outputs.dir }} -X main.versionData=${{ github.event.inputs.tagName }} -X main.commitId=${{ steps.commitId.outputs.dir }} -X main.author=XRSec
+          ldflags: -s -w -X main.buildTime=${{ steps.time.outputs.dir }} -X main.versionData=${{ github.event.inputs.tagName }} -X main.commitId=${{ steps.commitId.outputs.dir }} -X main.author=XRSec -buildvcs=false
           buildmode: default
       -
         name: Delete old Releases
