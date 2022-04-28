@@ -83,8 +83,13 @@ func GetSource(url, output string, export bool) string {
 func main() {
 	flag.Parse()
 	if version {
-		fmt.Printf("Version: %v BuildTime:%v", versionData, buildTime)
-		fmt.Printf("Author: %v CommitId: %v", author, commitId)
+		fmt.Printf("\n ╷──────────────────────────────────────────────────────────────────────────────╷ \n")
+		fmt.Printf(" │                                                                              │\n")
+		fmt.Printf(" │  HTML-TO-MARKDOWN                                                            │\n")
+		fmt.Printf(" │  Version: %6v\t | BuildTime: %18v                       │\n", versionData,buildTime)
+		fmt.Printf(" │  Author: %7v\t | CommitId: %41v  │\n", author,commitId)
+		fmt.Printf(" │                                                                              │\n")
+		fmt.Printf(" ╵──────────────────────────────────────────────────────────────────────────────╵ \n\n")
 		return
 	}
 	if help || url == "" {
@@ -92,10 +97,12 @@ func main() {
 		return
 	}
 
-	fmt.Printf("\n ╷───────────────────────────────────────────────── \n")
-	fmt.Printf(" │  HTML-TO-MARKDOWN								\n")
-	fmt.Printf(" │  URL: %v Output: %v					\n", url, output)
-	fmt.Printf(" ╵───────────────────────────────────────────────── \n\n")
+	fmt.Printf("\n ╷──────────────────────────────────────────────────╷ \n")
+	fmt.Printf(" │                                                  │\n")
+	fmt.Printf(" │  HTML-TO-MARKDOWN                                │\n")
+	fmt.Printf(" │  URL: %22v Output: %10v  │\n", url, output)
+	fmt.Printf(" │                                                  │\n")
+	fmt.Printf(" ╵──────────────────────────────────────────────────╵ \n\n")
 
 	body := GetSource(url, "", false)
 	HtmlToMarkdown(body, output, true)
