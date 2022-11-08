@@ -1,4 +1,4 @@
-package htmltomd
+package htm
 
 import (
 	md "github.com/JohannesKaufmann/html-to-markdown"
@@ -11,7 +11,14 @@ import (
 
 var err error
 
-func Convert(html, output string, export bool) string {
+/*
+	Convert: Convert HTML to Markdown
+		func Convert(html, output string) string
+		- html: html strings
+		- output: output file path (default: "")
+		- string: markdown strings
+*/
+func Convert(html, output string) string {
 	var (
 		markdown string
 	)
@@ -21,7 +28,7 @@ func Convert(html, output string, export bool) string {
 	} else {
 		log.Println("Successfully converted HTML to Markdown")
 	}
-	if export {
+	if output != "" {
 		if err = ioutil.WriteFile(output, []byte(markdown), 0644); err != nil {
 			log.Fatal(err)
 		} else {
@@ -31,7 +38,14 @@ func Convert(html, output string, export bool) string {
 	return markdown
 }
 
-func Get(url, output string, export bool) string {
+/*
+	Get: Get html stings
+		func Get(url, output string) string
+		- url: url
+		- output: output file path (default: "")
+		- string: html strings
+*/
+func Get(url, output string) string {
 	var (
 		req  *http.Response
 		body []byte
@@ -48,7 +62,7 @@ func Get(url, output string, export bool) string {
 	if body, err = ioutil.ReadAll(req.Body); err != nil {
 		log.Fatalf("读取错误: Error: [%s]", err)
 	}
-	if export {
+	if output != "" {
 		if err = ioutil.WriteFile(output, body, 0644); err != nil {
 			log.Fatalf("写入错误: Error: [%s]", err)
 		} else {
