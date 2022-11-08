@@ -1,14 +1,14 @@
 ## Example
 
 ```go
-import htmltomd "github.com/XRSec/HTML-TO-MARKDOWN"
+import htmltomd "github.com/XRSec/HTML-TO-MARKDOWN/src"
 
-body := GetSource(url, "", false)
-HtmlToMarkdown(body, output, true)
+body := htmltomd.Get(url, "", false)
+htmltomd.Convert(body, output, true)
 ```
 
 ```bash
-go run awvs.go -u https://baidu.com -o 123.md
+go run htmltomd.go -u https://baidu.com -o 123.md
 ```
 
 ```bash
