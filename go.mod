@@ -1,4 +1,4 @@
-module github.dev/XRSec/HTML-TO-MARKDOWN
+module github.com/XRSec/HTML-TO-MARKDOWN
 
 go 1.18
 

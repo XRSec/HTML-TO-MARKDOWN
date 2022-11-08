@@ -1,7 +1,7 @@
 ## Example
 
 ```go
-import . "github.dev/XRSec/HTML-TO-MARKDOWN"
+import htmltomd "github.com/XRSec/HTML-TO-MARKDOWN"
 
 body := GetSource(url, "", false)
 HtmlToMarkdown(body, output, true)
