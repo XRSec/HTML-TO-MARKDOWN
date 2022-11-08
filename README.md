@@ -1,18 +1,18 @@
 ## Example
 
 ```go
-import htmltomd "github.com/XRSec/HTML-TO-MARKDOWN/src"
+import htm "github.com/XRSec/HTML-TO-MARKDOWN/src"
 
-body := htmltomd.Get(url, "", false)
-htmltomd.Convert(body, output, true)
+body := htm.Get("https://www.baidu.com/", "")
+htm.Convert(body, "baidu.md")
 ```
 
 ```bash
-go run htmltomd.go -u https://baidu.com -o 123.md
+go run htmltomd.go -u https://www.baidu.com -o 123.md
 ```
 
 ```bash
-htmltomd -u https://baidu.com -o 123.md
+htmltomd -u https://www.baidu.com -o 123.md
 ```
 
 ## Build

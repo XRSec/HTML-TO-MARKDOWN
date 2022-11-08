@@ -1,9 +1,17 @@
+/*
+	Package main converts html to markdown.
+
+		import htm "github.com/XRSec/HTML-TO-MARKDOWN/src"
+
+		body := htm.Get("https://www.baidu.com/", "")
+		htm.Convert(body, "baidu.md")
+*/
 package main
 
 import (
 	"flag"
 	"fmt"
-	htmltomd "github.com/XRSec/HTML-TO-MARKDOWN/src"
+	htm "github.com/XRSec/HTML-TO-MARKDOWN/src"
 	"log"
 )
 
@@ -53,6 +61,6 @@ func main() {
 	fmt.Printf(" │                                                              │\n")
 	fmt.Printf(" ╵──────────────────────────────────────────────────────────────╵ \n\n")
 
-	body := htmltomd.Get(url, "", false)
-	htmltomd.Convert(body, output, true)
+	body := htm.Get(url, "")
+	htm.Convert(body, output)
 }
