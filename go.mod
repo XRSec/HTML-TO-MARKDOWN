@@ -1,11 +1,12 @@
 module github.com/XRSec/HTML-TO-MARKDOWN
 
-go 1.18
+go 1.23.0
 
-require github.com/JohannesKaufmann/html-to-markdown v1.3.3
+toolchain go1.24.4
+
+require github.com/JohannesKaufmann/html-to-markdown/v2 v2.3.3
 
 require (
-	github.com/PuerkitoBio/goquery v1.5.1 // indirect
-	github.com/andybalholm/cascadia v1.1.0 // indirect
-	golang.org/x/net v0.7.0 // indirect
+	github.com/JohannesKaufmann/dom v0.2.0 // indirect
+	golang.org/x/net v0.43.0 // indirect
 )
