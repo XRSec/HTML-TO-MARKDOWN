@@ -1,10 +1,10 @@
 /*
-	Package main converts html to markdown.
+Package main converts html to markdown.
 
-		import htm "github.com/XRSec/HTML-TO-MARKDOWN/src"
+	import htm "github.com/XRSec/HTML-TO-MARKDOWN/src"
 
-		body := htm.Get("https://www.baidu.com/", "")
-		htm.Convert(body, "baidu.md")
+	body := htm.Get("https://www.baidu.com/", "")
+	htm.Convert(body, "baidu.md")
 */
 package main
 
@@ -54,13 +54,13 @@ func main() {
 	}
 
 	fmt.Printf("\n ╷──────────────────────────────────────────────────────────────╷ \n")
-	fmt.Printf(" │                                                              │\n")
-	fmt.Printf(" │  HTML-TO-MARKDOWN                                            │\n")
-	fmt.Printf(" │  URL: %50v     │\n", url)
-	fmt.Printf(" │  Output: %10v                                          │\n", output)
-	fmt.Printf(" │                                                              │\n")
+	fmt.Printf(" │ %-60s │\n", "") // 空行
+	fmt.Printf(" │  %-59s │\n", "HTML-TO-MARKDOWN")
+	fmt.Printf(" │  URL:    %-51s │\n", url)
+	fmt.Printf(" │  Output: %-51s │\n", output)
+	fmt.Printf(" │ %-60s │\n", "") // 空行
 	fmt.Printf(" ╵──────────────────────────────────────────────────────────────╵ \n\n")
 
 	body := htm.Get(url, "")
-	htm.Convert(body, output)
+	htm.Convert(url, body, output)
 }
